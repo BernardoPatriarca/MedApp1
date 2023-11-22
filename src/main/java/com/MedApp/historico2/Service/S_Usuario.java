@@ -78,17 +78,9 @@ public class S_Usuario {
 
         if(senhaAtual.equals(m_usuario.getSenha())){
             podeEditar = true;
-            if(S_Generico.textoEstaVazio(nome)){
+            if(!novaSenha.equals(confSenha) && !S_Generico.textoEstaVazio(novaSenha) && !S_Generico.validarSenha(novaSenha) && !S_Generico.validarSenha(confSenha)){
                 podeEditar = false;
-                mensagem += "O nome precisa ser preenchido!";
-            }
-            if(!S_Generico.validarEmail(email)){
-                podeEditar = false;
-                mensagem += "E-mail inválido!";
-            }
-            if(!novaSenha.equals(confSenha) && !S_Generico.textoEstaVazio(novaSenha)){
-                podeEditar = false;
-                mensagem += "A nova senha e a confirmação de senha precisam ser iguais!";
+                mensagem += "A nova senha deve ser igual a confirmação de senha, e a senha deve ser uma senha valida";
             }
 
             if(podeEditar){

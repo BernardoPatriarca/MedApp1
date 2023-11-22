@@ -96,6 +96,7 @@
   color: #EF3B3A;
 }
 body {
+  overflow: hidden;
   background: linear-gradient(120deg, #6C95BB, #d8bfd8);  font-family: "Roboto", sans-serif;
   display: flex;
   margin-top: 50px;
@@ -112,13 +113,13 @@ body {
   <div class="forma">
     <div class="perfil-form">
       <p class="text-titulo">Atualizar perfil</p>
-      <input type="nome" placeholder="Nome" id="nome" required th:value="${usuario.nome}"/>
-      <input type="email" placeholder="Email" id="email" required th:value="${usuario.email}"/>
-      <input type="number" placeholder="CPF" id="CPF" required th:value="${usuario.CPF}"/>
-      <input type="password" placeholder="Senha" id="senha" required/>
+      <input type="nome" placeholder="Nome" id="nome" disabled th:value="${usuario.nome}"/>
+      <input type="email" placeholder="Email" id="email" disabled th:value="${usuario.email}"/>
+      <input type="number" placeholder="CPF" id="CPF" disabled th:value="${usuario.CPF}"/>
+      <input type="password" placeholder="Senha" id="senhaAtual" required/>
       <input type="password" placeholder="Nova Senha" id="novaSenha" required/>
-      <input type="password" placeholder="Confirmar Senha" id="confNovaSenha" required/>
-      <button class="btn-aceitar" id="enviar">Atualizar</button>
+      <input type="password" placeholder="Confirmar Senha" id="confSenha" required/>
+      <button class="btn-aceitar" id="salvar">Atualizar</button>
       <p class="message">voltar para o <a href="/Home">menu inicial</a></p>
     </div>
   </div>

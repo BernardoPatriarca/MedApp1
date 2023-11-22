@@ -2,16 +2,19 @@
       @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .cadastro-page {
-  width: 500px;
+  width: 1100px;
   padding: 8% 0 0;
-  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
   .forma {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 1100px;
   margin: 0 auto 100px;
   padding: 25px;
   text-align: center;
@@ -95,10 +98,13 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+
 body {
-  background: linear-gradient(120deg, #6C95BB, #d8bfd8);  font-family: "Roboto", sans-serif;
+overflow: hidden;
+  background-image: url(https://www.brainlab.com/wp-content/uploads/2021/03/female-doctor-visiting-patient-hospital-room.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  margin-top: 50px;
   justify-content: center;
   align-content: center;
   height: 150vh;
@@ -111,9 +117,41 @@ body {
 <div class="cadastro-page">
   <div class="forma">
     <div class="perfil-form">
-      <p class="text-titulo">Sobre o site</p>
-      <span>bananananananana</span>
-      <p class="message">voltar para o <a href="/Home">menu inicial</a></p>
+      <header>
+        <h1>Sobre o MedApp:</h1>
+      </header>
+
+      <section>
+        <ol>
+          <li>
+            <strong>Otimização de Processos:</strong>
+            <p>O MedApp é sua ferramenta essencial para aprimorar a eficiência operacional. Reduza o tempo gasto em tarefas administrativas, permitindo que sua equipe médica concentre-se no que realmente importa: o cuidado com os pacientes.</p>
+          </li>
+          <li>
+            <strong>Organização Excepcional:</strong>
+            <p>Nossa plataforma intuitiva oferece uma organização exemplar para seus dados médicos. Desde registros de pacientes até históricos clínicos, proporcionamos uma estrutura lógica que simplifica a busca e o acesso a informações cruciais.</p>
+          </li>
+          <li>
+            <strong>Aceleração da Manutenção de Dados:</strong>
+            <p>Diga adeus aos processos demorados de manutenção de dados. Com o MedApp, você experimentará uma aceleração notável na entrada, atualização e recuperação de informações, contribuindo para uma gestão mais dinâmica e ágil.</p>
+          </li>
+          <li>
+            <strong>Banco de Dados Super Eficiente:</strong>
+            <p>Nosso banco de dados foi desenvolvido com as mais recentes tecnologias, garantindo desempenho superior, confiabilidade e segurança. Adotamos práticas de segurança de ponta para proteger os dados sensíveis dos pacientes.</p>
+          </li>
+          <li>
+            <strong>Personalização Adaptativa:</strong>
+            <p>Reconhecemos a diversidade das práticas médicas e oferecemos uma plataforma que pode ser personalizada para atender às necessidades específicas de sua instituição. Seja uma clínica, hospital ou consultório, o MedApp se adapta às suas exigências.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>O Futuro da Gestão de Dados Médicos:</h3>
+        <p>O MedApp não é apenas uma solução; é uma visão para o futuro da gestão de dados médicos. Ao escolher nossa plataforma, você está investindo em inovação contínua, atualizações regulares e suporte excepcional.</p>
+        <p>Descubra como o MedApp pode transformar a maneira como você gerencia e interage com os dados médicos. Junte-se a nós nesta jornada para uma saúde mais eficiente, organizada e centrada no paciente.</p>
+      </section>
+      <p class="message">voltar para o <a href="/Home">menu inicial</a></p>      <p class="message">voltar para o <a href="/Home">menu inicial</a></p>
     </div>
   </div>
 </div>
