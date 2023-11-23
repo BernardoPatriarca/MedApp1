@@ -88,11 +88,21 @@ public class C_Usuario {
     }
 
     @GetMapping("/sobreSite")
-    public String getHome(HttpSession session,
+    public String getHomeSobreSite(HttpSession session,
                           Model model){
         if(session.getAttribute("usuario") != null) {
             model.addAttribute("usuario", session.getAttribute("usuario"));
             return "Usuario/pv/sobreSite";
+        }else{
+            return "redirect:/";
+        }
+    }
+    @GetMapping("/paginaInicial")
+    public String getHomePaginaInicial(HttpSession session,
+                          Model model){
+        if(session.getAttribute("usuario") != null) {
+            model.addAttribute("usuario", session.getAttribute("usuario"));
+            return "Usuario/pv/paginaInicial";
         }else{
             return "redirect:/";
         }
