@@ -3,7 +3,7 @@ function controleRotasGet(url){
         case "/logout":
             gerarSwal(url);
             break;
-             case "/edit/usuario":
+             case "/editUsuario":
                                         $.get(url,function(data){
                                             $(".container").html(data);
                                             $("#salvar").click(salvarPerfil);

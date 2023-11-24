@@ -1,7 +1,6 @@
 package com.MedApp.historico2.Controller;
 
 import com.MedApp.historico2.Model.M_Resposta;
-import com.MedApp.historico2.Model.M_Usuario;
 import com.MedApp.historico2.Service.S_Usuario;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -20,7 +19,7 @@ public class C_Usuario {
         if (session.getAttribute("usuario") != null) {
             return "redirect:/Home";
         } else {
-            return "Usuario/index";
+            return "/index";
         }
     }
 
@@ -45,37 +44,37 @@ public class C_Usuario {
 
     @GetMapping("/cadastro")
     public String getCadastro() {
-        return "Usuario/cadastro";
+        return "usuario/cadastro";
     }
 
     @GetMapping("/termos")
     public String getTermos() {
-        return "Usuario/termos";
+        return "usuario/termos";
     }
 
     @PostMapping("/cadastro")
     @ResponseBody
     public M_Resposta cadastrarUsuario(@RequestParam("nome") String nome,
-                                   @RequestParam("email") String email,
-                                   @RequestParam("CPF") String CPF,
-                                   @RequestParam("senha") String senha,
-                                   @RequestParam("relacao") String relacao) {
+                                       @RequestParam("email") String email,
+                                       @RequestParam("CPF") String CPF,
+                                       @RequestParam("senha") String senha,
+                                       @RequestParam("relacao") String relacao) {
         return S_Usuario.cadastrarUsuario(nome, email, CPF, senha, relacao);
     }
 
-    @GetMapping("/edit/usuario")
+    @GetMapping("/editUsuario")
     public String getEditUsuario(HttpServletRequest request,
                                  HttpSession session,
                                  Model model) {
         if (request.getHeader("Referer") != null) {
             Object usuario = session.getAttribute("usuario");
             model.addAttribute("usuario", usuario);
-            return "/usuario/pv/edit_usuario";
+            return "/Home/pv/editUsuario";
         }
         return "redirect:/";
     }
 
-    @PostMapping("/edit/usuario")
+    @PostMapping("/editUsuario")
     @ResponseBody
     public M_Resposta postEditUsuario(@RequestParam("nome") String nome,
                                       @RequestParam("email") String email,
@@ -92,17 +91,7 @@ public class C_Usuario {
                           Model model){
         if(session.getAttribute("usuario") != null) {
             model.addAttribute("usuario", session.getAttribute("usuario"));
-            return "Usuario/pv/sobreSite";
-        }else{
-            return "redirect:/";
-        }
-    }
-    @GetMapping("/paginaInicial")
-    public String getHomePaginaInicial(HttpSession session,
-                          Model model){
-        if(session.getAttribute("usuario") != null) {
-            model.addAttribute("usuario", session.getAttribute("usuario"));
-            return "Usuario/pv/paginaInicial";
+            return "Home/pv/sobreSite";
         }else{
             return "redirect:/";
         }

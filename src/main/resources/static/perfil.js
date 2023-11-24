@@ -9,7 +9,7 @@ function salvarPerfil(){
 
     $.ajax({
         type: "POST",
-        url: "/edit/usuario",
+        url: "/editUsuario",
         data:{
             nome:nome,
             email:email,

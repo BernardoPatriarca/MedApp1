@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class C_Home {
-    @GetMapping("/home")
+    @GetMapping("/Home")
     public String getHome(HttpSession session,
                           Model model){
         if(session.getAttribute("usuario") != null) {
             model.addAttribute("usuario", session.getAttribute("usuario"));
-            return "home/home";
+            return "home/Home";
         }else{
             return "redirect:/";
         }
